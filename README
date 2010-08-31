@@ -1,0 +1,36 @@
+play-piwik project
+
+@author nicogiard@gmail.com
+
+###########################
+
+play-piwik est un plugin pour le framework Play!
+
+play-piwik vous propose le tag #{piwik} a ajouter dans vos pages que vous voulez suivre grace à piwik.
+
+###########################
+
+Marche à suivre.
+
+(Si un jour ce plugin est dans le répositiory)
+> play install play-piwik
+
+(Sinon, le récupérer depuis github)
+> git clone xxx play-piwik
+
+Dans le fichier application.conf de votre projet ajouter le module play-piwik
+
+module.piwik=${play.path}/modules/play-piwik
+
+Vous devez aussi ajouter les deux lignes suivantes pour terminer le paramétrage de votre installation
+
+piwik.url=http://websiteUrl.com
+piwik.idSite=12
+
+
+Ensuite, par exemple dans votre fichier main.html ajouter à la fin du fichier, le tag :
+#{piwik}
+
+et voilà il ne vous reste plus qu'a démarrer votre serveur et votre application est prête pour utiliser votre système piwik.
+
+Pour tout problème ou toute remarque, n'hésitez pas à m'envoyer un email.

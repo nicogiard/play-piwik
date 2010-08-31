@@ -1,0 +1,13 @@
+# Les ligne commençant par '#' sont des commentaires.
+
+.classpath
+.project
+.settings
+.svn
+db/
+dist/
+eclipse/
+logs/
+lib/
+tmp/
+
