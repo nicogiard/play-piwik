@@ -3,15 +3,11 @@
 	idSite = play.configuration.getProperty("piwik.idSite")
 	if (url == null || idSite == null)
 	{
-		}%
-		<!-- play-piwik inactive. please configure it in your application.conf (both piwik.url & piwik.idSite) -->
-		%{
+		throw new play.exceptions.TagInternalException("[piwik.url] and [piwik.idSite] configuration entries are mandatory for piwik tag");
 	}
 	else{
 		if(!url.startsWith("http://") && !url.startsWith("https://")){
-	    	}%
-	    	<!-- play-piwik inactive. please configure it correctly in your application.conf (piwik.url must start with http:// or https://) -->
-	    	%{
+			throw new play.exceptions.TagInternalException("[piwik.url] must start with 'http://' or 'https://' for piwik tag");
 	    }
 	    else {
 		    if(!url.endsWith("/")) {
