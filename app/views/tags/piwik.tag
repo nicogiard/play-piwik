@@ -20,7 +20,9 @@
 try {
 var piwikTracker = Piwik.getTracker("${url}piwik.php", ${idSite});
 piwikTracker.trackPageView();
+#{if !play.configuration.getProperty("piwik.disableLinkTracking")}
 piwikTracker.enableLinkTracking();
+#{/if}
 } catch( err ) {}
 </script>
 <!-- End Piwik Tag -->
