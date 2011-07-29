@@ -1,0 +1,4 @@
+self: play -> play-piwik 0.1
+
+require:
+    - play

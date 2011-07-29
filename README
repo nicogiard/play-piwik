@@ -16,20 +16,24 @@ Marche à suivre.
 > play install play-piwik
 
 (Sinon, le récupérer depuis github)
-> git clone xxx play-piwik
+> git clone git@github.com:nicogiard/play-piwik.git
 
-Dans le fichier application.conf de votre projet ajouter le module play-piwik
+Dans le fichier dependencies.yml de votre projet ajouter le module play-piwik
 
-module.piwik=${play.path}/modules/play-piwik
+    # Application dependencies
+    require:
+        - play
+        - play -> play-piwik 0.1
 
-Vous devez aussi ajouter les deux lignes suivantes pour terminer le paramétrage de votre installation
+Vous devez aussi ajouter les trois lignes suivantes dans le fichiers application.conf pour terminer le paramétrage de votre installation
 
+piwik.enable=true
 piwik.url=http://websiteUrl.com
 piwik.idSite=12
 
 
 Ensuite, par exemple dans votre fichier main.html ajouter à la fin du fichier, le tag :
-#{piwik}
+#{piwik /}
 
 et voilà il ne vous reste plus qu'a démarrer votre serveur et votre application est prête pour utiliser votre système piwik.
 
